@@ -1,0 +1,49 @@
+{
+  "name": "drink-predictor",
+  "version": "1.0.0",
+  "description": "Predicting drink flavors",
+  "main": "index.js",
+  "scripts": {
+    "dev": "export NODE_ENV=development && webpack --watch --progress",
+    "lint": "eslint . --ext .js --fix && npm run lint:sass",
+    "lint:sass": "sass-lint --config .sass-lint.yml --verbose --no-exit",
+    "production": "NODE_ENV=production webpack --progress",
+    "start": "export NODE_ENV=development && webpack-dev-server --port 3001 --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Tanner Rigby",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "lodash": "^4.17.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^3.0.0",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
+    "eslint-plugin-react": "^7.4.0",
+    "file-loader": "^1.1.5",
+    "jsdom": "^11.3.0",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.8",
+    "sass-lint": "^1.12.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
