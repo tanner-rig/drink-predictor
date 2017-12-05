@@ -1,5 +1,29 @@
 .navigation {
+  display: flex;
   height: 50px;
   width: 100%;
   background-color: #FC4445;
+  color: #4A4A4A;
+  font-weight: bold;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 24px;
+
+  div {
+    padding: 10px 20px;
+
+    a {
+      text-decoration: none;
+      color: #4A4A4A;
+    }
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  .nav-logo {
+    height: 40px;
+    width: 20px;
+    padding: 5px 0 0 7px;
+  }
 }
