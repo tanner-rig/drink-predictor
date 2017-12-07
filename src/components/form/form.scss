@@ -1,0 +1,21 @@
+.form-page {
+  position: absolute;
+  width: 100%;
+
+  .logo-big {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .logo-star {
+      position: absolute;
+      height: 17em;
+    }
+
+    .logo-drink {
+      position: relative;
+      height: 12em;
+      margin-top: 15px;
+    }
+  }
+}
