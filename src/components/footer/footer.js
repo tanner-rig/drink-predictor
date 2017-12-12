@@ -4,6 +4,6 @@ import './footer.scss';
 
 export default class Footer extends Component {
   render() {
-    return <div className="footer">Copyright</div>;
+    return <div className="footer">Copyright 2017</div>;
   }
 }

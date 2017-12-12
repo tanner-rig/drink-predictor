@@ -3,8 +3,7 @@
 ## For Development
 ```
 npm install
-npm run dev
-npm run start
+npm start
 ```
 
 ## For Production
