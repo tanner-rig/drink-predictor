@@ -1,0 +1,42 @@
+{
+  "questionA": {
+    "name": "questionA",
+    "question": "What is your favorite drink?",
+    "options": [
+      "Coke",
+      "Poop",
+      "Sprite",
+      "Dr. Pepper"
+    ]
+  },
+  "questionB": {
+    "name": "questionB",
+    "question": "What is your favorite drink?",
+    "options": [
+      "CAke",
+      "aadd",
+      "Sprite",
+      "Dr. Pepper"
+    ]
+  },
+  "questionC": {
+    "name": "questionC",
+    "question": "What is your favorite drink?",
+    "options": [
+      "Coke Cane",
+      "Fanta",
+      "Sprite",
+      "Dr. Pepper"
+    ]
+  },
+  "questionD": {
+    "name": "questionD",
+    "question": "What is your favorite drink?",
+    "options": [
+      "Coke",
+      "Fanta",
+      "Sprite",
+      "Dr. Pepper"
+    ]
+  }
+}
