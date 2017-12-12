@@ -1,9 +1,11 @@
+@import '../../variables';
+
 .navigation {
   display: flex;
   height: 60px;
   width: 100%;
-  background-color: #fc4445;
-  color: #4a4a4a;
+  background-color: $red;
+  color: $grey;
   font-weight: bold;
   font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
   font-size: 24px;
@@ -13,7 +15,7 @@
 
     a {
       text-decoration: none;
-      color: #4a4a4a;
+      color: $grey;
     }
 
     &:hover {
