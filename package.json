@@ -4,11 +4,11 @@
   "description": "Predicting drink flavors",
   "main": "bundle.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development && webpack && webpack-dev-server --port 3001 --watch --progress",
+    "dev": "export NODE_ENV=production && webpack --watch --progress",
+    "start": "export NODE_ENV=production && webpack-dev-server --port 3001 --progress",
+    "build:prod": "NODE_ENV=production webpack --progress",
     "lint": "eslint . --ext .js --fix && npm run lint:sass",
     "lint:sass": "sass-lint --config .sass-lint.yml --verbose --no-exit",
-    "build:prod": "cross-env NODE_ENV=production webpack --progress",
-    "start:prod": "cross-env NODE_ENV=production && webpack-dev-server --port 3001 --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,7 +32,6 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.10.0",
     "eslint-plugin-react": "^7.4.0",

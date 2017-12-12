@@ -3,11 +3,11 @@
 ## For Development
 ```
 npm install
+npm run dev
 npm start
 ```
 
-## For Production
+## To build production bundle
 ```
 npm run build:prod
-npm run start:prod
 ```

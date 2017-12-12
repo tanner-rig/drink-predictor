@@ -3,16 +3,12 @@ const path = require('path');
 
 let filename = 'bundle.js';
 let devtool = 'source-map';
+
 let plugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   })
 ];
-
-if (process.env.NODE_ENV === 'development' || process.env.BUILD_OUTPUT === 'development') {
-  filename = 'bundle-dev.js';
-  devtool = 'eval-source-map';
-}
 
 const config = {
   devtool: devtool,
