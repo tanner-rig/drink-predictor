@@ -2,18 +2,19 @@
   "name": "drink-predictor",
   "version": "1.0.0",
   "description": "Predicting drink flavors",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
-    "dev": "export NODE_ENV=development && webpack --watch --progress",
+    "dev": "cross-env NODE_ENV=development && webpack --watch --progress",
     "lint": "eslint . --ext .js --fix && npm run lint:sass",
     "lint:sass": "sass-lint --config .sass-lint.yml --verbose --no-exit",
-    "production": "NODE_ENV=production webpack --progress",
-    "start": "export NODE_ENV=development && webpack-dev-server --port 3001 --progress",
+    "build:prod": "cross-env NODE_ENV=production webpack --progress",
+    "start": "cross-env NODE_ENV=development && webpack-dev-server --port 3001 --progress",
+    "start:prod": "cross-env NODE_ENV=production && webpack-dev-server --port 3001 --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/tanner-rig/drink-predictor.git"
   },
   "author": "Tanner Rigby",
   "license": "MIT",
