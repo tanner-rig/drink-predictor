@@ -39,7 +39,15 @@ export default class Form extends Component {
   }
 
   handleSubmit() {
-    console.log('this will call the API: ', this.state);
+    this.setState({ fetchingSoda: true });
+    setTimeout(() => this.setState({ fetchingSoda: false }), 3000);
+  }
+
+  loadingSoda() {
+    return (
+      <div className='loading-soda'>
+        Loading<span className='loading-dot'>.</span><span className='loading-dot'>.</span><span className='loading-dot'>.</span>
+      </div>);
   }
 
   showQuestions() {
@@ -68,17 +76,21 @@ export default class Form extends Component {
     return (
       <div className='form-page'>
         <div className='logo-big'>
-          <img className='logo-star' src={stars} alt='Stars' />
+          <img className={`logo-star ${this.state.fetchingSoda ? 'spin-star' : ''}`} src={stars} alt='Stars' />
           <img className='logo-drink' src={drinkLogo} alt='Drink Predictor Logo'/>
         </div>
-        <div className='form-section'>
-          <form onSubmit={this.handleSubmit}>
-            {this.showQuestions()}
-          </form>
-        </div>
-        <div className='predict-button'>
-          <button onClick={this.handleSubmit}>Predict</button>
-        </div>
+        {this.state.fetchingSoda ? this.loadingSoda() :
+          <div>
+            <div className='form-section'>
+              <form>
+                {this.showQuestions()}
+              </form>
+            </div>
+            <div className='predict-button'>
+              <button onClick={this.handleSubmit}>Predict</button>
+            </div>
+          </div>
+        }
       </div>
     );
   }
