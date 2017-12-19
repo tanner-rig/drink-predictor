@@ -1,0 +1,33 @@
+<html>
+  <head>
+
+  </head>
+  <body onload="initViz();" style="font: verdana;">
+
+    <div id="vizContainer" style="position: absolute;"></div>
+
+    <script type="text/javascript" src="http://public.tableau.com/javascripts/api/tableau-2.0.0.min.js"></script>
+    <script type="text/javascript">
+      var workbook, activesheet, viz;
+      var filterState;
+
+      function initViz() {
+        var containerDiv = document.getElementById("vizContainer"),
+        url = "https://public.tableau.com/views/drink-predictor/FizzFindertheStoryBehindUs?:embed=y&:display_count=no";
+
+        var options = {
+          hideTabs: true,
+          hideToolbar: true,
+          onFirstInteractive: function() {
+            listenToMarksSelection();
+            workbook = viz.getWorkbook();
+            activeSheet = workbook.getActiveSheet();
+          }
+        }
+
+        viz = new tableau.Viz(containerDiv, url, options);
+      }
+
+    </script>
+  </body>
+</html>
