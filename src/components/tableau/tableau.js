@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 var tableauScriptUrl = "http://public.tableau.com/javascripts/api/tableau-2.0.0.min.js";
+var workbook, activesheet, viz;
+var filterState;
 
 function load(url) {
   return new Promise(function(resolve, reject) {
@@ -14,17 +16,12 @@ function load(url) {
   })
 }
 
-var workbook, activesheet, viz;
-var filterState;
-
 function initViz() {
   load(tableauScriptUrl)
     .then(function() {
       console.log('Successfully loaded Tableau Javascript API!');
       var containerDiv = document.getElementById("vizContainer"),
-      // var containerDiv = document.createElement("div"),
       url = "https://public.tableau.com/views/drink-predictor/FizzFindertheStoryBehindUs?:embed=y&:display_count=no";
-      // url = "https://public.tableau.com/views/TableauPractice_51/Sheet3?:embed=y&:display_count=yes&publish=yes";
 
       containerDiv.className="vizualization";
 
