@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import axios from 'axios';
 
+import { getDrink } from '../../actions'
 import drinkLogo from '../../assets/drink-logo.png';
 import stars from '../../assets/stars.png';
 
@@ -45,7 +45,7 @@ export default class Form extends Component {
   handleSubmit() {
     this.setState({ fetchingSoda: true });
     setTimeout(() => this.setState({ fetchingSoda: false }), 3000);
-    axios.post()
+    let drink = getDrink();
   }
 
   loadingSoda() {
