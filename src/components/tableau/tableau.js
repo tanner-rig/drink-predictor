@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 const tableauScriptUrl = "https://public.tableau.com/javascripts/api/tableau-2.0.0.min.js";
+let pageIsLoaded = false;
 
 function load(url) {
   return new Promise(function(resolve, reject) {
@@ -29,11 +30,20 @@ function initViz() {
     });
 }
 
+function pageLoaded() {
+  if (pageIsLoaded === false) {
+    pageIsLoaded = true;
+    initViz();
+  } else {
+    pageIsLoaded = false;
+  }
+}
+
 export default class Tableau extends Component {
 
   render() {
     return (
-      <div className="tableau" onload={initViz()}>
+      <div className="tableau" onload={pageLoaded()}>
         <div id="vizContainer"></div>
       </div>
     );
