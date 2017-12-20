@@ -42,7 +42,7 @@ export default class Tableau extends Component {
 
   render() {
     return (
-      <div className="tableau" onload={pageLoaded()}>
+      <div className="tableau" onLoad={pageLoaded()}>
         <div id="vizContainer"></div>
       </div>
     );
