@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 
-import { getDrink } from '../../actions'
+import Drink from './drink'
+
+import { getDrink } from '../../actions';
 import drinkLogo from '../../assets/drink-logo.png';
 import stars from '../../assets/stars.png';
 
@@ -19,10 +21,26 @@ export default class Form extends Component {
       questionC: questionList.questionC.options[0],
       questionD: questionList.questionD.options[0],
       questionE: questionList.questionE.options[0],
+      drinkFound: false,
+      predictedDrink: ''
     };
 
+    this.handleBack = this.handleBack.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleBack() {
+    this.setState({
+      fetchingSoda: false,
+      predictedDrink: '',
+      drinkFound: false,
+      questionA: questionList.questionA.options[0],
+      questionB: questionList.questionB.options[0],
+      questionC: questionList.questionC.options[0],
+      questionD: questionList.questionD.options[0],
+      questionE: questionList.questionE.options[0],
+    });
   }
 
   handleSelectChange(e) {
@@ -44,8 +62,13 @@ export default class Form extends Component {
 
   handleSubmit() {
     this.setState({ fetchingSoda: true });
-    setTimeout(() => this.setState({ fetchingSoda: false }), 3000);
     let drink = getDrink();
+    this.setState({
+      fetchingSoda: false,
+      predictedDrink: `${drink.base} with ${drink.flavor}`,
+      drinkFound: true
+    });
+    console.log('DRINK: ', drink);
   }
 
   loadingSoda() {
@@ -80,23 +103,31 @@ export default class Form extends Component {
   render() {
     return (
       <div className='form-page'>
-        <div className='logo-big'>
-          <img className={`logo-star ${this.state.fetchingSoda ? 'spin-star' : ''}`} src={stars} alt='Stars' />
-          <img className='logo-drink' src={drinkLogo} alt='Drink Predictor Logo'/>
-        </div>
-        {this.state.fetchingSoda ? this.loadingSoda() :
+        {this.state.drinkFound ?
           <div>
-            <div className='form-section'>
-              <form>
-                {this.showQuestions()}
-              </form>
-            </div>
+            <Drink drink={this.state.predictedDrink}/>
             <div className='predict-button'>
-              <button onClick={this.handleSubmit}>Predict</button>
+              <button onClick={this.handleBack}>Go Back</button>
             </div>
-          </div>
-        }
-      </div>
-    );
+          </div> :
+          <div>
+            <div className='logo-big'>
+              <img className={`logo-star ${this.state.fetchingSoda ? 'spin-star' : ''}`} src={stars} alt='Stars' />
+              <img className='logo-drink' src={drinkLogo} alt='Drink Predictor Logo'/>
+            </div>
+            {this.state.fetchingSoda ? this.loadingSoda() :
+              <div>
+                <div className='form-section'>
+                  <form>
+                    {this.showQuestions()}
+                  </form>
+                </div>
+                <div className='predict-button'>
+                  <button onClick={this.handleSubmit}>Predict</button>
+                </div>
+              </div>
+            }
+        </div>}
+      </div>);
   }
 }
