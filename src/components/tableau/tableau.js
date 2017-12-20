@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-var tableauScriptUrl = "http://public.tableau.com/javascripts/api/tableau-2.0.0.min.js";
+const tableauScriptUrl = "https://public.tableau.com/javascripts/api/tableau-2.0.0.min.js";
 
 function load(url) {
   return new Promise(function(resolve, reject) {
-    var script = document.createElement('script');
+    let script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
     script.src = url;
@@ -19,7 +19,7 @@ function initViz() {
     .then(function() {
       console.log('Successfully loaded Tableau Javascript API supporting script!');
 
-      var containerDiv = document.getElementById("vizContainer"),
+      const containerDiv = document.getElementById("vizContainer"),
       storyAPIUrl = "https://public.tableau.com/views/drink-predictor/FizzFindertheStoryBehindUs?:embed=y&:display_count=no";
 
       return new tableau.Viz(containerDiv, storyAPIUrl);
