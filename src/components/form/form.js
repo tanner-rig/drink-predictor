@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import axios from 'axios';
 
 import drinkLogo from '../../assets/drink-logo.png';
 import stars from '../../assets/stars.png';
@@ -16,7 +17,8 @@ export default class Form extends Component {
       questionA: questionList.questionA.options[0],
       questionB: questionList.questionB.options[0],
       questionC: questionList.questionC.options[0],
-      questionD: questionList.questionD.options[0]
+      questionD: questionList.questionD.options[0],
+      questionE: questionList.questionE.options[0],
     };
 
     this.handleSelectChange = this.handleSelectChange.bind(this);
@@ -35,12 +37,15 @@ export default class Form extends Component {
       this.setState({questionC: value});
     } else if (name === 'questionD') {
       this.setState({questionD: value});
+    } else if (name === 'questionE') {
+      this.setState({questionE: value});
     }
   }
 
   handleSubmit() {
     this.setState({ fetchingSoda: true });
     setTimeout(() => this.setState({ fetchingSoda: false }), 3000);
+    axios.post()
   }
 
   loadingSoda() {
