@@ -1,42 +1,57 @@
 {
   "questionA": {
     "name": "questionA",
-    "question": "What is your favorite drink?",
+    "question": "How often do you drink soda?",
     "options": [
-      "Coke",
-      "Poop",
-      "Sprite",
-      "Dr. Pepper"
+      "1 - Dont drink soda",
+      "2 - Once a week",
+      "3 - Twice a week",
+      "4 - Three times a week",
+      "5 - 4+ times a week"
     ]
   },
   "questionB": {
     "name": "questionB",
-    "question": "What is your favorite drink?",
+    "question": "Are you the life of the party?",
     "options": [
-      "CAke",
-      "aadd",
-      "Sprite",
-      "Dr. Pepper"
+      "1 - Strongly Disagree",
+      "2 - Disagree",
+      "3 - Neither disagree or agree",
+      "4 - Agree",
+      "5 - Strongly Agree"
     ]
   },
   "questionC": {
     "name": "questionC",
-    "question": "What is your favorite drink?",
+    "question": "You are in good health",
     "options": [
-      "Coke Cane",
-      "Fanta",
-      "Sprite",
-      "Dr. Pepper"
+      "1 - Strongly Disagree",
+      "2 - Disagree",
+      "3 - Neither disagree or agree",
+      "4 - Agree",
+      "5 - Strongly Agree"
     ]
   },
   "questionD": {
     "name": "questionD",
-    "question": "What is your favorite drink?",
+    "question": "Are you thrifty?",
     "options": [
-      "Coke",
-      "Fanta",
-      "Sprite",
-      "Dr. Pepper"
+      "1 - Strongly Disagree",
+      "2 - Disagree",
+      "3 - Neither disagree or agree",
+      "4 - Agree",
+      "5 - Strongly Agree"
+    ]
+  },
+  "questionE": {
+    "name": "questionE",
+    "question": "Are you a proud citizen?",
+    "options": [
+      "1 - Strongly Disagree",
+      "2 - Disagree",
+      "3 - Neither disagree or agree",
+      "4 - Agree",
+      "5 - Strongly Agree"
     ]
   }
 }
