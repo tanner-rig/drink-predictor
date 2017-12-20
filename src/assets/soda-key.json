@@ -1,37 +1,142 @@
 {
-  "SodaID": {
-    "id": "1A",
-    "Base": "Sprite",
-    "Flavor": "Coconut"
+  "1A": {
+    "base": "Sprite",
+    "flavor": "Coconut"
   },
-  "SodaID": {
-    "id": "1B",
-    "Base": "Sprite",
-    "Flavor": "Strawberry"
+  "1B": {
+    "base": "Sprite",
+    "flavor": "Strawberry"
   },
-  "SodaID": {
-    "id": "1C",
-    "Base": "Sprite",
-    "Flavor": "Vanilla"
+  "1C": {
+    "base": "Sprite",
+    "flavor": "Vanilla"
   },
-  "SodaID": {
-    "id": "1D",
-    "Base": "Sprite",
-    "Flavor": "Lime"
+  "1D": {
+    "base": "Sprite",
+    "flavor": "Lime"
   },
-  "SodaID": {
-    "id": "1E",
-    "Base": "Sprite",
-    "Flavor": "Cherry"
+  "1E": {
+    "base": "Sprite",
+    "flavor": "Cherry"
   },
-  "SodaID": {
-    "id": "1F",
-    "Base": "Sprite",
-    "Flavor": "No Flavor Mix-in"
+  "1F": {
+    "base": "Sprite",
+    "flavor": "No Flavor Mix-in"
   },
-  "SodaID": {
-    "id": "1G",
-    "Base": "Sprite",
-    "Flavor": "Cream"
+  "1G": {
+    "base": "Sprite",
+    "flavor": "Cream"
   },
+  "2A": {
+    "base": "Mountain Dew",
+    "flavor": "Coconut"
+  },
+  "2B": {
+    "base": "Mountain Dew",
+    "flavor": "Strawberry"
+  },
+  "2C": {
+    "base": "Mountain Dew",
+    "flavor": "Vanilla"
+  },
+  "2D": {
+    "base": "Mountain Dew",
+    "flavor": "Lime"
+  },
+  "2E": {
+    "base": "Mountain Dew",
+    "flavor": "Cherry"
+  },
+  "2F": {
+    "base": "Mountain Dew",
+    "flavor": "No Flavor Mix-in"
+  },
+  "2G": {
+    "base": "Mountain Dew",
+    "flavor": "Cream"
+  },
+  "3A": {
+    "base": "Coke",
+    "flavor": "Coconut"
+  },
+  "3B": {
+    "base": "Coke",
+    "flavor": "Strawberry"
+  },
+  "3C": {
+    "base": "Coke",
+    "flavor": "Vanilla"
+  },
+  "3D": {
+    "base": "Coke",
+    "flavor": "Lime"
+  },
+  "3E": {
+    "base": "Coke",
+    "flavor": "Cherry"
+  },
+  "3F": {
+    "base": "Coke",
+    "flavor": "No Flavor Mix-in"
+  },
+  "3G": {
+    "base": "Coke",
+    "flavor": "Cream"
+  },
+  "4A": {
+    "base": "Diet Coke",
+    "flavor": "Coconut"
+  },
+  "4B": {
+    "base": "Diet Coke",
+    "flavor": "Strawberry"
+  },
+  "4C": {
+    "base": "Diet Coke",
+    "flavor": "Vanilla"
+  },
+  "4D": {
+    "base": "Diet Coke",
+    "flavor": "Lime"
+  },
+  "4E": {
+    "base": "Diet Coke",
+    "flavor": "Cherry"
+  },
+  "4F": {
+    "base": "Diet Coke",
+    "flavor": "No Flavor Mix-in"
+  },
+  "4G": {
+    "base": "Diet Coke",
+    "flavor": "Cream"
+  },
+  "5A": {
+    "base": "Dr. Pepper",
+    "flavor": "Coconut"
+  },
+  "5B": {
+    "base": "Dr. Pepper",
+    "flavor": "Strawberry"
+  },
+  "5C": {
+    "base": "Dr. Pepper",
+    "flavor": "Vanilla"
+  },
+  "5D": {
+    "base": "Dr. Pepper",
+    "flavor": "Lime"
+  },
+  "5E": {
+    "base": "Dr. Pepper",
+    "flavor": "Cherry"
+  },
+  "5F": {
+    "base": "Dr. Pepper",
+    "flavor": "No Flavor Mix-in"
+  },
+  "5G": {
+    "base": "Dr. Pepper",
+    "flavor": "Cream"
+  }
 }
