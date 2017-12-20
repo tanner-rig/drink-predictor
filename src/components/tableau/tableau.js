@@ -11,7 +11,7 @@ function load(url) {
     script.onload = resolve;
     script.onerror = reject;
     document.head.appendChild(script);
-  })
+  });
 }
 
 function initViz() {
@@ -26,15 +26,15 @@ function initViz() {
     })
     .catch(function(err) {
       console.error('Something went wrong loading Tableau Javascript API supporting script...', err);
-    })
+    });
 }
 
 export default class Tableau extends Component {
 
   render() {
     return (
-      <div className="tableau">
-        <div id="vizContainer" onload={initViz()}></div>
+      <div className="tableau" onload={initViz()}>
+        <div id="vizContainer"></div>
       </div>
     );
   }
