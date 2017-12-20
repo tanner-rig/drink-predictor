@@ -4,7 +4,7 @@
   "description": "Predicting drink flavors",
   "main": "bundle.js",
   "scripts": {
-    "dev": "export NODE_ENV=production && webpack --watch --progress",
+    "dev": "export NODE_ENV=development && webpack --watch --progress",
     "start": "export NODE_ENV=production && webpack-dev-server --port 3001 --progress",
     "build:prod": "NODE_ENV=production webpack --progress",
     "lint": "eslint . --ext .js --fix && npm run lint:sass",
