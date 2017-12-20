@@ -20,10 +20,9 @@ function initViz() {
     .then(function() {
       console.log('Successfully loaded Tableau Javascript API supporting script!');
 
-      const containerDiv = document.getElementById("vizContainer"),
-      storyAPIUrl = STORY_URL;
+      const containerDiv = document.getElementById("vizContainer");
 
-      return new tableau.Viz(containerDiv, storyAPIURL);
+      return new tableau.Viz(containerDiv, STORY_URL);
     })
     .catch(function(err) {
       console.error('Something went wrong loading Tableau Javascript API supporting script...', '\n\n', err);
