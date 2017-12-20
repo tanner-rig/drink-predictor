@@ -1,0 +1,37 @@
+{
+  "SodaID": {
+    "id": "1A",
+    "Base": "Sprite",
+    "Flavor": "Coconut"
+  },
+  "SodaID": {
+    "id": "1B",
+    "Base": "Sprite",
+    "Flavor": "Strawberry"
+  },
+  "SodaID": {
+    "id": "1C",
+    "Base": "Sprite",
+    "Flavor": "Vanilla"
+  },
+  "SodaID": {
+    "id": "1D",
+    "Base": "Sprite",
+    "Flavor": "Lime"
+  },
+  "SodaID": {
+    "id": "1E",
+    "Base": "Sprite",
+    "Flavor": "Cherry"
+  },
+  "SodaID": {
+    "id": "1F",
+    "Base": "Sprite",
+    "Flavor": "No Flavor Mix-in"
+  },
+  "SodaID": {
+    "id": "1G",
+    "Base": "Sprite",
+    "Flavor": "Cream"
+  },
+}

@@ -4,7 +4,6 @@ import { STORY_URL, TABLEAU_URL } from '../../config';
 
 
 function load(url) {
-  console.log('CONFIG', STORY_URL);
   return new Promise(function(resolve, reject) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
