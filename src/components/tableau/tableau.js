@@ -18,8 +18,6 @@ function load(url) {
 function initViz() {
   load(tableauScriptUrl)
     .then(function() {
-      console.log('Successfully loaded Tableau Javascript API supporting script!');
-
       const containerDiv = document.getElementById("vizContainer"),
       storyAPIUrl = "https://public.tableau.com/views/drink-predictor/FizzFindertheStoryBehindUs?:embed=y&:display_count=no";
 
