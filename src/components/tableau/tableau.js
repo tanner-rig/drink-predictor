@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 const tableauScriptUrl = "https://public.tableau.com/javascripts/api/tableau-2.0.0.min.js";
+const storyAPIURL = "https://public.tableau.com/views/drink-predictor/FizzFinderTheStoryBehindtheData?:embed=y&:display_count=yes&publish=yes";
+
 let pageIsLoaded = false;
 
 function load(url) {
@@ -18,13 +20,12 @@ function load(url) {
 function initViz() {
   load(tableauScriptUrl)
     .then(function() {
-      const containerDiv = document.getElementById("vizContainer"),
-      storyAPIUrl = "https://public.tableau.com/views/drink-predictor/FizzFindertheStoryBehindUs?:embed=y&:display_count=no";
+      const containerDiv = document.getElementById("vizContainer");
 
-      return new tableau.Viz(containerDiv, storyAPIUrl);
+      return new tableau.Viz(containerDiv, storyAPIURL);
     })
     .catch(function(err) {
-      console.error('Something went wrong loading Tableau Javascript API supporting script...', err);
+      console.error('Something went wrong loading Tableau Javascript API supporting script...', '\n\n', err);
     });
 }
 
