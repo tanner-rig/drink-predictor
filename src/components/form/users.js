@@ -11,17 +11,18 @@ import { getDrink } from '../../actions';
 import drinkLogo from '../../assets/drink-logo.png';
 import stars from '../../assets/stars.png';
 
-const users = require('../../assets/users.json');
+const usersList = require('../../assets/users.json');
 
 export default class Users extends Component {
   constructor() {
     super();
 
     this.state = {
-      user: users.usersList[0],
-      userList: users.usersList,
+      user: usersList[Object.keys(usersList)[0]].id,
+      userList: usersList,
       drinkFound: false,
-      predictedDrink: ''
+      predictedDrink1: '',
+      predictedDrink2: ''
     };
 
     this.handleUserBack = this.handleUserBack.bind(this);
@@ -32,27 +33,31 @@ export default class Users extends Component {
   handleUserBack() {
     this.setState({
       fetchingSoda: false,
-      predictedDrink: '',
+      predictedDrink1: '',
+      predictedDrink2: '',
       drinkFound: false
     });
   }
 
   handleUserSelectChange(e) {
     let value = e.target.value;
-    console.log('VALUER: ', value);
-
     this.setState({user: value});
   }
 
   handleUserSubmit() {
     this.setState({ fetchingSoda: true });
-    let drink = getDrink();
-    this.setState({
-      fetchingSoda: false,
-      predictedDrink: `${drink.base} with ${drink.flavor}`,
-      drinkFound: true
-    });
-    console.log('DRINK: ', drink);
+
+    let userSubmitted = _.get(this.state.userList, this.state.user);
+
+    setTimeout(() => {
+      let drinks = getDrink(userSubmitted);
+      this.setState({
+        fetchingSoda: false,
+        predictedDrink1: `${drinks.firstDrink.base} with ${drinks.firstDrink.flavor}`,
+        predictedDrink2: `${drinks.secondDrink.base} with ${drinks.secondDrink.flavor}`,
+        drinkFound: true
+      });
+    }, 1000);
   }
 
   loadingSoda() {
@@ -75,7 +80,7 @@ export default class Users extends Component {
 
   showUserOptions(options) {
     let userOptions = _.map(options, (opt, index) => {
-      return <option key={index} value={opt}>{opt}</option>;
+      return <option key={index} value={opt.id}>{opt.id}</option>;
     });
 
     return userOptions;
@@ -88,7 +93,7 @@ export default class Users extends Component {
         <div className='form-page'>
           {this.state.drinkFound ?
             <div>
-              <Drink drink={this.state.predictedDrink}/>
+              <Drink drink1={this.state.predictedDrink1} drink2={this.state.predictedDrink2} />
               <div className='predict-button'>
                 <button onClick={this.handleUserBack}>Go Back</button>
               </div>

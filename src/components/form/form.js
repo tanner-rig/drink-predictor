@@ -10,19 +10,24 @@ import stars from '../../assets/stars.png';
 import './form.scss';
 
 const questionList = require('../../assets/questions-list.json');
+const usersList = require('../../assets/users.json');
 
 export default class Form extends Component {
   constructor() {
     super();
 
     this.state = {
-      questionA: questionList.questionA.options[0],
-      questionB: questionList.questionB.options[0],
-      questionC: questionList.questionC.options[0],
-      questionD: questionList.questionD.options[0],
-      questionE: questionList.questionE.options[0],
+      questionA: Number(questionList.questionA.options[0].charAt(0)),
+      questionB: Number(questionList.questionB.options[0].charAt(0)),
+      questionC: Number(questionList.questionC.options[0].charAt(0)),
+      questionD: Number(questionList.questionD.options[0].charAt(0)),
+      questionE: Number(questionList.questionE.options[0].charAt(0)),
+      questionF: Number(questionList.questionF.options[0].charAt(0)),
+      questionG: Number(questionList.questionG.options[0].charAt(0)),
       drinkFound: false,
-      predictedDrink: ''
+      predictedDrink1: '',
+      predictedDrink2: '',
+      userList: usersList
     };
 
     this.handleBack = this.handleBack.bind(this);
@@ -30,16 +35,46 @@ export default class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  getUserID(questionArray) {
+    let sumQ = _.sum(questionArray);
+    let userRec = 'R_CkLCzVxfyGe1fLr';
+
+    if (sumQ === 7) {
+      userRec = 'R_CkLCzVxfyGe1fLr';
+    } else if (sumQ <= 11) {
+      userRec = 'R_RfB9XDjNlI8QlAB';
+    } else if (sumQ <= 13) {
+      userRec = 'R_2RVYvsm2K3P4raK';
+    } else if (sumQ <= 15) {
+      userRec = 'R_3JwTi26N0y48pvW';
+    } else if (sumQ <= 18) {
+      userRec = 'R_2TBDHqgGcjlHhMu';
+    } else if (sumQ <= 21) {
+      userRec = 'R_cTqF1zMc4U6iqBz';
+    } else if (sumQ <= 23) {
+      userRec = 'R_bmEmiEyQZGiKIZH';
+    } else if (sumQ <= 25) {
+      userRec = 'R_1dmeDi9akfL7hgO';
+    } else if (sumQ >= 26) {
+      userRec = 'R_31AzRE2ELZLutGs';
+    }
+
+    return userRec;
+  }
+
   handleBack() {
     this.setState({
       fetchingSoda: false,
-      predictedDrink: '',
+      predictedDrink1: '',
+      predictedDrink2: '',
       drinkFound: false,
-      questionA: questionList.questionA.options[0],
-      questionB: questionList.questionB.options[0],
-      questionC: questionList.questionC.options[0],
-      questionD: questionList.questionD.options[0],
-      questionE: questionList.questionE.options[0],
+      questionA: Number(questionList.questionA.options[0].charAt(0)),
+      questionB: Number(questionList.questionB.options[0].charAt(0)),
+      questionC: Number(questionList.questionC.options[0].charAt(0)),
+      questionD: Number(questionList.questionD.options[0].charAt(0)),
+      questionE: Number(questionList.questionE.options[0].charAt(0)),
+      questionF: Number(questionList.questionF.options[0].charAt(0)),
+      questionG: Number(questionList.questionG.options[0].charAt(0))
     });
   }
 
@@ -48,27 +83,40 @@ export default class Form extends Component {
     let value = e.target.value;
 
     if (name === 'questionA') {
-      this.setState({questionA: value});
+      this.setState({questionA: Number(value.charAt(0))});
     } else if (name === 'questionB') {
-      this.setState({questionB: value});
+      this.setState({questionB: Number(value.charAt(0))});
     } else if (name === 'questionC') {
-      this.setState({questionC: value});
+      this.setState({questionC: Number(value.charAt(0))});
     } else if (name === 'questionD') {
-      this.setState({questionD: value});
+      this.setState({questionD: Number(value.charAt(0))});
     } else if (name === 'questionE') {
-      this.setState({questionE: value});
+      this.setState({questionE: Number(value.charAt(0))});
+    } else if (name === 'questionF') {
+      this.setState({questionF: Number(value.charAt(0))});
+    } else if (name === 'questionG') {
+      this.setState({questionG: Number(value.charAt(0))});
     }
   }
 
   handleSubmit() {
+    let { questionA, questionB, questionC, questionD, questionE, questionF, questionG } = this.state;
+
+    let userID = this.getUserID([questionA, questionB, questionC, questionD, questionE, questionF, questionG]);
+
     this.setState({ fetchingSoda: true });
-    let drink = getDrink();
-    this.setState({
-      fetchingSoda: false,
-      predictedDrink: `${drink.base} with ${drink.flavor}`,
-      drinkFound: true
-    });
-    console.log('DRINK: ', drink);
+
+    let userSubmitted = _.get(this.state.userList, userID);
+
+    setTimeout(() => {
+      let drinks = getDrink(userSubmitted);
+      this.setState({
+        fetchingSoda: false,
+        predictedDrink1: `${drinks.firstDrink.base} with ${drinks.firstDrink.flavor}`,
+        predictedDrink2: `${drinks.secondDrink.base} with ${drinks.secondDrink.flavor}`,
+        drinkFound: true
+      });
+    }, 1000);
   }
 
   loadingSoda() {
@@ -105,7 +153,7 @@ export default class Form extends Component {
       <div className='form-page'>
         {this.state.drinkFound ?
           <div>
-            <Drink drink={this.state.predictedDrink}/>
+            <Drink drink1={this.state.predictedDrink1} drink2={this.state.predictedDrink2} />
             <div className='predict-button'>
               <button onClick={this.handleBack}>Go Back</button>
             </div>

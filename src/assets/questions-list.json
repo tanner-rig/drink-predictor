@@ -53,5 +53,21 @@
       "4 - Agree",
       "5 - Strongly Agree"
     ]
+  },
+  "questionF": {
+    "name": "questionF",
+    "question": "Married or Single?",
+    "options": [
+      "1 - Single",
+      "2 - Married"
+    ]
+  },
+  "questionG": {
+    "name": "questionG",
+    "question": "Gender",
+    "options": [
+      "1 - Male",
+      "2 - Female"
+    ]
   }
 }
