@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 
-import Drink from './drink'
+import Drink from './drink';
 
 import { getDrink } from '../../actions';
 import drinkLogo from '../../assets/drink-logo.png';
@@ -175,7 +175,7 @@ export default class Form extends Component {
                 </div>
               </div>
             }
-        </div>}
+          </div>}
       </div>);
   }
 }

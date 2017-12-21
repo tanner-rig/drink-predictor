@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 import Navigation from '../navigation/navigation';
 import Footer from '../footer/footer';
-import Drink from './drink'
+import Drink from './drink';
 
 import './form.scss';
 
@@ -115,7 +115,7 @@ export default class Users extends Component {
                   </div>
                 </div>
               }
-          </div>}
+            </div>}
         </div>
         <Footer />
       </div>

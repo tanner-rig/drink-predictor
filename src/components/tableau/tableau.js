@@ -18,9 +18,9 @@ function load(url) {
 function initViz() {
   load(TABLEAU_URL)
     .then(function() {
-      console.log('Successfully loaded Tableau Javascript API supporting script!');
+      console.info('Successfully loaded Tableau Javascript API supporting script!');
 
-      const containerDiv = document.getElementById("vizContainer");
+      const containerDiv = document.getElementById('vizContainer');
 
       return new tableau.Viz(containerDiv, STORY_URL);
     })

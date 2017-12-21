@@ -2,8 +2,11 @@
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-@keyframes blink {50% { color: transparent }}
+@keyframes spin { 100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+} }
+@keyframes blink {50% { color: transparent; }}
 
 .form-page {
   position: absolute;
@@ -28,9 +31,9 @@
       height: 17em;
 
       &.spin-star {
-        -webkit-animation:spin 3s linear infinite;
-        -moz-animation:spin 3s linear infinite;
-        animation:spin 3s linear infinite;
+        -webkit-animation: spin 3s linear infinite;
+        -moz-animation: spin 3s linear infinite;
+        animation: spin 3s linear infinite;
       }
     }
 
@@ -46,9 +49,10 @@
     text-align: center;
     margin: 85px 0 0 20px;
 
-    .loading-dot { animation: 1s blink infinite }
-    .loading-dot:nth-child(2) { animation-delay: 250ms }
-    .loading-dot:nth-child(3) { animation-delay: 500ms }
+    .loading-dot { animation: 1s blink infinite;
+      &:nth-child(2) { animation-delay: 250ms; }
+      &:nth-child(3) { animation-delay: 500ms; }
+    }
   }
 
   .form-section {
