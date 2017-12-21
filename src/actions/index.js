@@ -5,13 +5,11 @@ import { API_URL, API_KEY } from '../config.js';
 
 axios.defaults.headers.post['Authorization'] = `Bearer ${API_KEY}`;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 const sodaKey = require('../assets/soda-key.json');
 
-export function getDrink() {
-
-  console.log('HELLO');
-
+export function getDrink(user) {
   const body = JSON.stringify({
     "Inputs": {
       "input1": {
@@ -22,7 +20,7 @@ export function getDrink() {
         ],
         "Values": [
           [
-            "R_bmEmiEyQZGiKIZH",
+            `${user.id}`,
             "",
             ""
           ]
@@ -32,9 +30,12 @@ export function getDrink() {
     "GlobalParameters": {}
   });
 
-  let firstDrink = _.get(sodaKey, '1A');
+  let firstDrink = _.get(sodaKey, user.drink1);
+  let secondDrink = _.get(sodaKey, user.drink2);
 
-  return firstDrink
+  let drinkPrefs = { firstDrink, secondDrink };
+
+  return drinkPrefs
     // axios.post(`${API_URL}`, body)
     //   .then((response) => {
     //     console.log(response);
